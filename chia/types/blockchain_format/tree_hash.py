@@ -33,10 +33,10 @@ def sha256_treehash(sexp: CLVMObject, precalculated: Optional[Set[bytes32]] = No
             op_stack.append(roll)
             op_stack.append(handle_sexp)
         else:
-            if sexp.atom in precalculated:
-                r = sexp.atom
+            if sexp.as_atom() in precalculated:
+                r = sexp.as_atom()
             else:
-                r = std_hash(b"\1" + sexp.atom)
+                r = std_hash(b"\1" + sexp.as_atom())
             sexp_stack.append(r)
 
     def handle_pair(sexp_stack, op_stack, precalculated) -> None:
