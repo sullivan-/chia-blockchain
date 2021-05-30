@@ -42,6 +42,7 @@ dev_dependencies = [
 ]
 
 kwargs = dict(
+    version="1.1.6-bfp",
     name="chia-blockchain",
     author="Mariano Sorgente",
     author_email="mariano@chia.net",
